@@ -37,7 +37,7 @@ if (choosenWord === userWord) {
 // Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 
-var evenOdd = prompt('Odds or Even? Choose!');
+var evenOdd = prompt('Odds or Even? Choose!').toLowerCase();
 var userNum = parseInt(prompt('Type a number from 1 to 5'));
 console.log('User\'s number is: ' + userNum);
 
@@ -62,7 +62,6 @@ var sum = userNum + computerNum;
 var even = isEven(sum) // 'even' variable matches with 'isEven' function
 
 function isEven(sum){ // function to verify if the sum is even or odd
-  sum = parseInt(sum);
   if(sum % 2 === 0){
     return true;
   }
@@ -71,12 +70,12 @@ function isEven(sum){ // function to verify if the sum is even or odd
 
 // Dichiariamo chi ha vinto.
 
-if (isEven === true && evenOdd === 'even') {
-  alert('1, 2, 3...n\ Even! You won!');
-} else if (isEven === false && evenOdd === 'odd') {
-  alert('1, 2, 3...n\ Odd! You won!');
-} else if (isEven === true && evenOdd === 'odd') {
-  alert('1, 2, 3...n\ Even! You lose!');
-} else if (isEven === false && evenOdd === 'even') {
-  alert('1, 2, 3...n\ Odd! You lose!');
+if (even === true && evenOdd === 'even') { // if the user choose Evens, the condition is [true] and he/she wons
+  alert('1, 2, 3...\nEvens won!\nYou won!');
+} else if (even === false && evenOdd === 'odd') {
+  alert('1, 2, 3...\nOdds won!\nYou won!');
+} else if (even === true && evenOdd === 'odd') {
+  alert('1, 2, 3...\nEvens won!\nYou lose!');
+} else if (even === false && evenOdd === 'even') {
+  alert('1, 2, 3...\nOdds won!\nYou lose!');
 }
