@@ -6,21 +6,26 @@
 var userWord = prompt('type a word');
 console.log(userWord);
 
+var choosenWord = pali(userWord);
+console.log(choosenWord);
 
 
+// using a function to reverse the string letters
+function pali(word) {
+  var backward = '';
+  for (var i = word.length - 1; i >= 0; i--) {
+    backward += word[i];
+  }
+  return backward;
+}
 
+// Conditional Statement
+if (choosenWord === userWord) {
+  alert('The word is palindrome!')
 
-
-
-
-
-
-
-
-
-
-
-
+} else {
+  alert('The word isn\'t palindrome');
+}
 
 
 
