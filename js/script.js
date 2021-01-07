@@ -4,36 +4,33 @@
 
 // asking to the user to type a word
 var userWord = prompt('type a word');
-console.log(userWord);
+console.log('User\'s word is: ' + userWord);
 
 var choosenWord = pali(userWord);
-console.log(choosenWord);
+console.log('Reverse word become: ' + choosenWord);
 
 
 // using a function to reverse the string letters
 function pali(word) {
   var backward = '';
-  for (var i = word.length - 1; i >= 0; i--) {
-    backward += word[i];
+  for (i = word.length - 1; i >= 0; i--) { // setting the variable [i] with -1 so in this way it'll start counting from the end of the string.
+                                           // then the condition must be more or equal to 0
+                                           // then decrease the value (i--) each time the code has been executed
+
+    backward += word[i]; // in this way the string of the variable 'backward' will be filled with the reverse word
   }
-  return backward;
+  return backward;  // stopping the execution of the function (without 'backward' the value is "undefined")
 }
 
 // Conditional Statement
 if (choosenWord === userWord) {
   alert('The word is palindrome!')
+  console.log('The word is palindrome!')
 
 } else {
-  alert('The word isn\'t palindrome');
+  alert('The word isn\'t palindrome.');
+  console.log('The word isn\'t palindrome.')
 }
-
-
-
-
-
-
-
-
 
 // Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
