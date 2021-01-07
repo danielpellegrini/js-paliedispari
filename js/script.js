@@ -32,14 +32,51 @@ if (choosenWord === userWord) {
   console.log('The word isn\'t palindrome.')
 }
 
+
+
 // Pari e Dispari
 // L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+
+var evenOdd = prompt('Odds or Even? Choose!');
+var userNum = parseInt(prompt('Type a number from 1 to 5'));
+console.log('User\'s number is: ' + userNum);
+
+
 // Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+
+var computerNum = randomNum(1, 5);
+console.log('Computer\'s number is: ' + computerNum);
+
+function randomNum(min, max) {
+  var result = Math.floor(Math.random() * (max + 1 - min) + min);
+  return result;
+}
+
 // Sommiamo i due numeri
+
+console.log(userNum + computerNum);
+
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+
+var sum = userNum + computerNum;
+var even = isEven(sum) // 'even' variable matches with 'isEven' function
+
+function isEven(sum){ // function to verify if the sum is even or odd
+  sum = parseInt(sum);
+  if(sum % 2 === 0){
+    return true;
+  }
+  return false;
+}
+
 // Dichiariamo chi ha vinto.
 
-// Consigli del giorno
-// 1. Scriviamo sempre in italiano i passaggi che vogliamo fare, usate i commenti per individuare gli ostacoli da superare e gli aspetti della logica più ostili
-// 2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
-// 3. Se volete, sviluppate tutto nello stesso file html + js, o dividete in cartelle differenti. Insomma, fate come ve pare :D
+if (isEven === true && evenOdd === 'even') {
+  alert('1, 2, 3...n\ Even! You won!');
+} else if (isEven === false && evenOdd === 'odd') {
+  alert('1, 2, 3...n\ Odd! You won!');
+} else if (isEven === true && evenOdd === 'odd') {
+  alert('1, 2, 3...n\ Even! You lose!');
+} else if (isEven === false && evenOdd === 'even') {
+  alert('1, 2, 3...n\ Odd! You lose!');
+}
